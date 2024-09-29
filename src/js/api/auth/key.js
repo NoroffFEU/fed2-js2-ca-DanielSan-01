@@ -14,10 +14,10 @@ export async function getKey() {
     }),
   });
   const apiKeyData = await response.json();
-  console.log(apiKeyData);
+  console.log(apiKeyData.data.key);
   
   if (response.ok) {
-    localStorage.setItem('apiKey', apiKeyData.data.apiKey);
+    localStorage.setItem('apiKey', apiKeyData.data.key);
     console.log('Key successful', apiKeyData);
   } else {
     console.log('Failed to create API key', apiKeyData);
